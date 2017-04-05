@@ -6,4 +6,6 @@ Problem Statement -> Match the nuts and bolts from set of two arrays.
  -> Sort LinkedList with 0's 1's and 2's
    Traverse the list keep the count of 1s, 2s and 0s
    Modify the linked lists data according to 1s,2s & 0s count
- 
+
+ -> Count Inversion
+ Using Merge Sort
