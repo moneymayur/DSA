@@ -33,6 +33,20 @@ public class BinaryTree {
     	return h;
     	
     }
+    void printNodesAtK(int k){
+    	printNodesAtK(root,k);
+    }
+    
+    void printNodesAtK(Node n, int k){
+    	 if(n == null)
+    		 return;
+    	if(k == 0)			 
+    		System.out.println(n.data);
+    	else{
+    		printNodesAtK(n.Left,k-1);
+    		printNodesAtK(n.Right, k-1);
+    	}
+    }
     
     void printLevelOrder(){
     	int h = height(root);
@@ -41,7 +55,7 @@ public class BinaryTree {
     }
     
     void printGivenOrder(Node n, int i){
-    	if(root == null)
+    	if(n == null)
     		return;
     	else if( i == 1)
     	   System.out.println(n.data);		
@@ -85,8 +99,18 @@ public class BinaryTree {
     	printInorder(n.Left);
 		System.out.println(n.data);
 		printInorder(n.Right);
-	
-		}
+	}
+boolean printAncestors(Node node,int target){
+	if(node == null)
+		return false;
+	if(node.data == target)
+		return true;
+	if(printAncestors(node.Left, target) || printAncestors(node.Right, target)){
+				System.out.println(node.data);
+				return true;
+				}
+	return false;
+}
  
 
 	public static void main(String [] args){
@@ -94,13 +118,19 @@ public class BinaryTree {
 	Node a = new Node(1);
 	Node b  = new Node (4);
 	Node c = new Node(5);
+	Node d = new Node(6);
+
 	a.Left = b;
 	a.Right = c;
+	c.Left = d;
 	t.root = a;
-	t.printInorder();
-	t.printPostOrder();
-	t.printPreOrder();
-	t.printLevelOrder();
+//	t.printInorder();
+//	t.printPostOrder();
+//	t.printPreOrder();
+//	t.printLevelOrder();
+//	t.printNodesAtK(1);
+	t.printAncestors(a,6);
+	
 	//printNode(a);
 }
 
