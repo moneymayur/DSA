@@ -37,7 +37,7 @@ public class BinaryTree {
     	printNodesAtK(root,k);
     }
     
-    void printNodesAtK(Node n, int k){
+    void printNodesAtK(Node n, int k){  // iterate to the nodes and k-- when u reached there just print them
     	 if(n == null)
     		 return;
     	if(k == 0)			 
@@ -100,7 +100,7 @@ public class BinaryTree {
 		System.out.println(n.data);
 		printInorder(n.Right);
 	}
-boolean printAncestors(Node node,int target){
+boolean printAncestors(Node node,int target){  //find recursively if the nodes are present in the left or the right subtree if present just print it
 	if(node == null)
 		return false;
 	if(node.data == target)
@@ -111,7 +111,22 @@ boolean printAncestors(Node node,int target){
 				}
 	return false;
 }
- 
+ void mirror(Node n){  // Recursively mirror on left and right sub tree and swap the node pointers
+	 Node temp;
+	 if(n == null)
+		 return;
+	 else{
+		 mirror(n.Left);
+		 mirror(n.Right);
+		 
+		 //swap pointer;
+		 temp = n.Right;
+		 n.Right = n.Left;
+		 n.Left = temp;
+	 }
+	 
+	 
+ }
 
 	public static void main(String [] args){
 	BinaryTree t = new BinaryTree();
@@ -122,15 +137,16 @@ boolean printAncestors(Node node,int target){
 
 	a.Left = b;
 	a.Right = c;
-	c.Left = d;
+	c.Right = d;
 	t.root = a;
-//	t.printInorder();
+	t.printInorder();
 //	t.printPostOrder();
 //	t.printPreOrder();
 //	t.printLevelOrder();
 //	t.printNodesAtK(1);
-	t.printAncestors(a,6);
-	
+//	t.printAncestors(a,6);
+	t.mirror(a);
+	t.printInorder();
 	//printNode(a);
 }
 
