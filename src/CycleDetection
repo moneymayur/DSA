@@ -1,0 +1,11 @@
+public boolean CycleDetection(graph[]){
+int parent[] = new int (graph.V);
+
+for (int i=0; i<graph.V; ++i)
+            parent[i]=-1;
+            
+if(find(parent,i) == find(parent,j)){
+ return true;}
+union(parent,i,j);
+
+}
