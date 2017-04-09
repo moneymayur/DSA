@@ -1,0 +1,13 @@
+The input can be given at command line as "input1 input2 input3" (Weights separated by spaces)
+You can use Scanner to read the input. Consider the sample code below:
+Assuming the input is only integers.
+
+ Scanner scanner = new Scanner(System.in);
+ int numOfBlocks = scanner.nextInt();
+ int weightArray[] = new weightArray[numOfBlocks];
+ for(int i=0;i<numOfBlocks;i++)
+       {
+        weightArray[i] = scanner.nextInt();
+       }
+ scanner.close();
+//your logic
