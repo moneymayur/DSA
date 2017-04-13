@@ -1,0 +1,27 @@
+//Other Approach Sort the string and Scan the input array from left to right. For every element, count its
+//occurrences in temp[] using binary search. As soon as we find a characterthat occurs more than once, we return the character
+//This Approach Store in hashmap O(n);
+import java.util.*;
+
+class RepeatedElement{
+	
+	public char CheckRepeatedElements(char [] str){
+	Hashset<Character> h = new HashSet<>();
+	
+	for(int i=0;i<str.length();i++){
+		char c = str[i];
+		
+		if(h.contains(c))
+			return c;
+		else
+		h.add(c);
+	}
+	return '\0';
+	}
+public static void main(String [] args){
+		String str = "geeksforgeeks";
+        char[] arr = str.toCharArray;
+        System.out.println(CheckRepeatedElements(arr));
+	}
+	
+	}
