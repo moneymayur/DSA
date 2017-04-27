@@ -1,0 +1,24 @@
+How do we find the cause for the deadlock ?
+Using Program 
+java.lang.management.ThreadMXBean is the answer to find out deadlock threads in Java. Here is the short code demo:
+
+import java.lang.management.*;
+class  DeadLockDetect
+{
+    public void findDeadLocks()
+    {
+        ThreadMXBean tmx = ManagementFactory.getThreadMXBean();
+        long[] ids = tmx.findDeadlockedThreads();
+        if (ids != null )
+        {
+            ThreadInfo[] infos = tmx.getThreadInfo(ids,true,true);
+            System.out.println("Following Threads are deadlocked");
+            for (ThreadInfo info : infos)
+            {
+                System.out.println(info);
+            }
+        }
+    }
+}
+Using Tool
+JConsole is one of the tools that tells almost all information about the threads running in your code.
