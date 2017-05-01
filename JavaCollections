@@ -1,0 +1,13 @@
+To create a collection on any user created type i.e. class type always override the hashCode and equals method as the collections method such as contains,indexOf() which will result wrong value.
+
+Best practice
+
+if(ArrayList.size == 0) //its a bad practice instead use:
+ArrayList.isEmpty();
+
+for(i=0;i<ArrayList.size();i++) //Here the function will be called everytime we iterates the loop so the function will be pushed to stack and will have performance issues.
+instead use
+for(i=0,n=ArrayList.size();i<n;i++)
+
+ensureCapacity(new capacity) will ensure that if we are adding elements more than the actual then the capacity is already ensured
+else a new arrayList will be created and all the elements will be copied and hence will have performance issues. 
