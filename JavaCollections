@@ -1,4 +1,5 @@
 To create a collection on any user created type i.e. class type always override the hashCode and equals method as the collections method such as contains,indexOf() which will result wrong value.
+equal and hashCode helps in detecting the duplicates and ensures quick search. hashCode helps in fetching quickly as collections internally stores based on the hashing done using the generated hashCodes.
 
 Best practice
 
