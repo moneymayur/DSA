@@ -1,0 +1,6 @@
+Garbage Collection:
+Whenever objects are created they are assigned memory in heap.
+The Garbage Collection is done using the Mark and Sweep Algorithm(Stop or Run Algorithm):
+It has two phases:
+Mark Phase: To detect unreachable objects.
+Sweep Phase: The second pass traverses all pointers, starting at the accessible roots of a program and for each object traversed it marks the object. The third pass walks linearly again and removes all objects that are not marked.
